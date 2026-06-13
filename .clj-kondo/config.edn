@@ -1,0 +1,16 @@
+{;; ── optional linters ──────────────────────────────────────────────
+ :linters {:missing-docstring            {:level :warning}
+           :unused-value                 {:level :warning}
+           :shadowed-var                 {:level :warning}
+           :used-underscored-binding     {:level :warning}
+           :unsorted-required-namespaces {:level :warning}
+           :refer                        {:level :warning
+                                          :exclude [cljs.test]}}
+
+ ;; ── custom macro shapes ───────────────────────────────────────────
+ ;; Register custom macros so clj-kondo lints them correctly, e.g.:
+ ;; :lint-as {myapp.test/deftest cljs.test/deftest}
+ :lint-as {}
+
+ ;; ── ClojureScript specifics ───────────────────────────────────────
+ :cljs {:analysis {:max-lines-per-file 200}}}
